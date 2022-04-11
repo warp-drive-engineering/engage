@@ -1,0 +1,50 @@
+# unconventional js
+/blueprints/*/files/
+/blueprints/controller/
+/blueprints/controller-test/
+/blueprints/route/
+/blueprints/route-test/
+/blueprints/edition-detector.js
+/blueprints/test-framework-detector.js
+/frontend/*/*/blueprints/*/files/
+/frontend/*/*/blueprints/controller/
+/frontend/*/*/blueprints/controller-test/
+/frontend/*/*/blueprints/route/
+/frontend/*/*/blueprints/route-test/
+/frontend/*/*/blueprints/edition-detector.js
+/frontend/*/*/blueprints/test-framework-detector.js
+/vendor/
+
+# compiled output
+/dist/
+/tmp/
+
+# dependencies
+/bower_components/
+/node_modules/
+
+# misc
+/coverage/
+!.*
+.eslintcache
+/DEBUG
+/frontend/*/*/DEBUG
+/frontend/*/*/dist/
+/frontend/*/*/tmp/
+/frontend/*/*/node_modules/
+/frontend/*/*/vendor/
+
+# ember-try
+/.node_modules.ember-try/
+/bower.json.ember-try
+/package.json.ember-try
+
+# Backend Files
+
+/backend-api/
+/.github/
+/image-classifier/
+/logs/
+/mysql_dumps/
+/mysql_dumps_old/
+/posutils/

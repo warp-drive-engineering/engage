@@ -1,0 +1,24 @@
+{
+    "name": "<<<<appName>>>>",
+    "description": "Add your description here",
+    "version": "0.0.0",
+    "private": true,
+    "license": "ALL RIGHTS RESERVED",
+    "author": "<<<<githubUser>>>>",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://<<<<githubUrl>>>>",
+        "directory": "apps/<<<<directory>>>>"
+    },
+    "homepage": "https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>",
+    "bugs": "https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>/issues",
+    "engines": {
+        "node": "14.* || >= 16"
+    },
+    "volta": {
+        "extends": "../../package.json"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "scripts": {}
+}

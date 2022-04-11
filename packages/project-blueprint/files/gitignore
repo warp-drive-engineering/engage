@@ -1,0 +1,145 @@
+gitpull.log
+backend/fnbtech-LATEST-BUILD.zip
+*.pdf
+*.pdf
+*.pdf
+*.xlsx
+*.pdf
+*.pdf
+*.swp
+*.patch
+backend/server/Order.pdf
+backend/server/Order.pdf
+.DS_Store
+bfg-1.12.15.jar
+backend/server/realtime.xls
+backend/server/tmpImgFile
+backend/server/qbd.iif
+mysql_dump.sql
+mysql_dumps/
+mysql_dumps_old/
+backend/.jvmopts
+db_load_log.txt
+mikes_release_test.txt
+backend/test_edi_orders
+.idea/workspace.xml
+.idea/fnb.iml
+.idea/modules.xml
+backend/backend-LATEST-BUILD.zip
+image-classifier/scripts/representative
+image-classifier/scripts/test_images
+/backend-api/target/
+/backend-api/common/target/
+/backend-api/marshalls/target/
+/backend-api/server/target/
+/backend-api/realtime-audits/target/
+/backend-api/common/common.iml
+/backend-api/marshalls/marshalls.iml
+/backend-api/server/craftable.iml
+/backend-api/realtime-audits/realtime-audits.iml
+/backend-api/!.mvn/wrapper/maven-wrapper.jar
+/backend-api/!**/src/main/**/target/
+/backend-api/!**/src/test/**/target/
+### STS ###
+/backend-api/.apt_generated
+/backend-api/.classpath
+/backend-api/.factorypath
+/backend-api/.project
+/backend-api/.settings
+/backend-api/.springBeans
+/backend-api/.sts4-cache
+### IntelliJ IDEA ###
+/backend-api/.idea
+/backend-api/*.iws
+/backend-api/*.iml
+/backend-api/*.ipr
+### NetBeans ###
+/backend-api//nbproject/private/
+/backend-api//nbbuild/
+/backend-api//dist/
+/backend-api//nbdist/
+/backend-api//.nb-gradle/
+/backend-api/build/
+/backend-api/!**/src/main/**/build/
+/backend-api/!**/src/test/**/build/
+### VS Code ###
+/backend-api/.vscode/
+/backend-api/.idea/*
+/codemod/target/
+/codemod/output/
+/codemod/start/
+/codemod/common/target/
+/codemod/marshalls/target/
+/codemod/server/target/
+/codemod/realtime-audits/target/
+/codemod/common/common.iml
+/codemod/marshalls/marshalls.iml
+/codemod/server/craftable.iml
+/codemod/realtime-audits/realtime-audits.iml
+/codemod/!.mvn/wrapper/maven-wrapper.jar
+/codemod/!**/src/main/**/target/
+/codemod/!**/src/test/**/target/
+### STS ###
+/codemod/.apt_generated
+/codemod/.classpath
+/codemod/.factorypath
+/codemod/.project
+/codemod/.settings
+/codemod/.springBeans
+/codemod/.sts4-cache
+### IntelliJ IDEA ###
+/codemod/.idea
+/codemod/*.iws
+/codemod/*.iml
+/codemod/*.ipr
+### NetBeans ###
+/codemod//nbproject/private/
+/codemod//nbbuild/
+/codemod//dist/
+/codemod//nbdist/
+/codemod//.nb-gradle/
+/codemod/build/
+/codemod/!**/src/main/**/build/
+/codemod/!**/src/test/**/build/
+### VS Code ###
+/codemod/.vscode/
+/codemod/.idea/*
+mysql_dump_pos.sql
+### Frontend ###
+
+# compiled output
+/dist/
+/tmp/
+
+# dependencies
+/bower_components/
+/node_modules/
+
+# misc
+usage-data.json
+/.env*
+/.pnp*
+/.sass-cache
+/.eslintcache
+/connect.lock
+/coverage/
+/libpeerconnection.log
+lerna-debug.log*
+npm-debug.log*
+testem.log
+/npm-debug.log*
+/testem.log
+/yarn-error.log
+/codemods.log
+/DEBUG
+/frontend/*/*/DEBUG
+/frontend/*/*/dist/
+/frontend/*/*/tmp/
+/frontend/*/*/node_modules/
+/MODULE_REPORT.md
+
+# ember-try
+/.node_modules.ember-try/
+/bower.json.ember-try
+/package.json.ember-try
+*.iml

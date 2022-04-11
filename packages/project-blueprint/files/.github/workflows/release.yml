@@ -1,0 +1,109 @@
+name: Generate Release Candidate
+
+on:
+  workflow_dispatch:
+    branches:
+      - main
+    inputs:
+      releaseType:
+        description: 'Release Type'
+        required: true
+        default: 'minor'
+        type: choice
+        options:
+        - major
+        - minor
+        - patch
+
+concurrency:
+  group: generate-release-candidate
+  cancel-in-progress: true
+
+jobs:
+  check-permissions:
+    if: github.actor!='<<<<GITHUB_ACTOR>>>>'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v5
+        with:
+          script: |
+            core.setFailed(github.actor + ' is not authorized to run the release script.')
+  run-release:
+    if: github.actor!='<<<<GITHUB_ACTOR>>>>'
+    name: Generate Release Candidate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          token: ${{ secrets.ENGINEERING_GITHUB_AUTH }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: "yarn"
+      - uses: crazy-max/ghaction-import-gpg@v4
+        with:
+          gpg_private_key: ${{ secrets.ENGINEERING_SIGNATURE }}
+          passphrase: ${{ secrets.ENGINEERING_SIGNATURE_PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+          git_tag_gpgsign: true
+          git_push_gpgsign: false
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile --non-interactive
+      - name: Run Release Script
+        id: run_release
+        # after we run the release we force the release branch to be whatever we just released
+        # this works regardless of whether we released a new patch or a new major/minor
+        run: |
+          git checkout $RELEASE_BRANCH
+          git status
+          node ./bin/release.mjs -t $RELEASE_TYPE -b $RELEASE_BRANCH
+          node ./bin/generate-release-notes.mjs
+          version=v$(cat ./tmp/version.txt)
+          echo "::set-output name=version::$version"
+        env:
+          RELEASE_TYPE: ${{ github.event.inputs.releaseType }}
+          FROM_BRANCH: ${{ github.event.inputs.releaseType == 'patch' && 'release' || 'master' }}
+          RELEASE_BRANCH: ${{ github.event.inputs.releaseType == 'patch' && 'release' || 'master' }}
+          GITHUB_AUTH: ${{ secrets.ENGINEERING_GITHUB_AUTH }}
+          GH_TOKEN: ${{ secrets.ENGINEERING_GITHUB_AUTH }}
+      - name: Publish Github Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.run_release.version }}
+          bodyFile: "./tmp/release-notes.md"
+          token: ${{ secrets.ENGINEERING_GITHUB_AUTH }}
+      - name: Update Release Branch
+        run: |
+          git checkout release
+          git reset --hard $FROM_BRANCH
+          git push origin release -f
+
+  update-changelog-for-patch:
+    if: github.event.inputs.releaseType == 'patch'
+    name: Update Main Changelog For Patch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          ref: 'master'
+          token: ${{ secrets.ENGINEERING_GITHUB_AUTH }}
+          fetch-depth: 1
+      - uses: crazy-max/ghaction-import-gpg@v4
+        with:
+          gpg_private_key: ${{ secrets.ENGINEERING_SIGNATURE }}
+          passphrase: ${{ secrets.ENGINEERING_SIGNATURE_PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+          git_tag_gpgsign: true
+          git_push_gpgsign: false
+      - name: Update Main Changelog
+        run: |
+          git fetch origin release --depth=1
+          git checkout origin/release CHANGELOG.md
+          VERSION=$(git describe --abbrev=0 --tags origin/release)
+          git commit -S -am "update CHANGELOG.md for $VERSION"
+          git push origin master

@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig-root.json",
+  "compilerOptions": {},
+  "files": []
+}

@@ -2,11 +2,6 @@
     "name": "@warp-drive/blueprints",
     "version": "0.0.0",
     "private": true,
-    "workspaces": {
-        "packages": [
-            "packages/*"
-        ]
-    },
     "repository": {
         "type": "git",
         "url": "git+ssh://git@github.com/warp-drive-engineering/blueprints.git"

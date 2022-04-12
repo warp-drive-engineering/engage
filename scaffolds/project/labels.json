@@ -53,5 +53,20 @@
         "name": ":memo: skip",
         "description": "Changelog | This PR SHOULD NOT be included in the changelog",
         "color": "#fefeee"
+    },
+    {
+        "name": ":dart: main",
+        "description": "PR Targets the Main Branch (default)",
+        "color": "fdfdfd"
+    },
+    {
+        "name": ":dart: release",
+        "description": "PR Should be Backported to the Release Branch Once Accepted",
+        "color": "fdfdfd"
+    },
+    {
+        "name": "dependencies",
+        "description": "PR Updates a Dependency",
+        "color": "c5e5e5"
     }
 ]

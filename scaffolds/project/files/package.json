@@ -11,16 +11,17 @@
           "apps/*",
           "engines/*",
           "tools/*"
-      ]
+      ],
+      "nohoist": ["**/ember-source", "**/ember-cli-version-checker", "**/@html-next/vertical-collection"]
   },
   "scripts": {
     "test:development": "",
     "test:production": "",
     "test:fastboot": "",
     "test:embroider": "",
-    "lint:hbs": "",
-    "lint:ts": "",
-    "check:types": ""
+    "lint:hbs": "ember-template-lint .",
+    "lint:ts": "eslint . --cache",
+    "check:types": "tsc -p ./tsconfig.json --noEmit --pretty false"
   },
   "repository": {
       "type": "git",
@@ -72,6 +73,7 @@
       "@types/rsvp": "^4.0.4",
       "@typescript-eslint/eslint-plugin": "^5.19.0",
       "@typescript-eslint/parser": "^5.19.0",
+      "json-typescript": "^1.1.2",
       "ember-template-lint": "^4.3.0",
       "ember-template-lint-plugin-prettier": "^4.0.0",
       "eslint": "^8.13.0",

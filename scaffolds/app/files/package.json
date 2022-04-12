@@ -1,24 +1,84 @@
 {
-    "name": "<<<<appName>>>>",
-    "description": "Add your description here",
-    "version": "0.0.0",
-    "private": true,
-    "license": "ALL RIGHTS RESERVED",
-    "author": "<<<<githubUser>>>> <<<<<githubEmail>>>>>",
-    "repository": {
-        "type": "git",
-        "url": "git+ssh://<<<<githubUrl>>>>",
-        "directory": "apps/<<<<directory>>>>"
-    },
-    "homepage": "https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>",
-    "bugs": "https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>/issues",
-    "engines": {
-        "node": "14.* || >= 16"
-    },
-    "volta": {
-        "extends": "../../package.json"
-    },
-    "dependencies": {},
-    "devDependencies": {},
-    "scripts": {}
+  "name": "<<<<appName>>>>",
+  "description": "Add your description here",
+  "version": "0.0.0",
+  "private": true,
+  "license": "ALL RIGHTS RESERVED",
+  "author": "<<<<githubUser>>>> <<<<<githubEmail>>>>>",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://<<<<githubUrl>>>>",
+    "directory": "apps/<<<<directory>>>>"
+  },
+  "homepage": "https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>",
+  "bugs": "https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>/issues",
+  "engines": {
+    "node": "14.* || >= 16"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@ember/optional-features": "^2.0.0",
+    "@ember/test-helpers": "^2.6.0",
+    "@embroider/compat": "^1.2.0",
+    "@embroider/core": "^1.2.0",
+    "@embroider/webpack": "^1.2.0",
+    "@ember-data/store": "^4.3.0",
+    "@ember-data/model": "^4.3.0",
+    "@ember-data/record-data": "^4.3.0",
+    "@glimmer/component": "^1.0.4",
+    "@glimmer/tracking": "^1.0.4",
+    "@html-next/flexi-dsl": "^3.0.0-alpha.0",
+    "@html-next/flexi-layouts": "^3.0.0-alpha.0",
+    "@html-next/flexi-default-styles": "^3.0.0-alpha.0",
+    "@html-next/flexi-config": "^3.0.0-alpha.0",
+    "@html-next/svg-icon-optimizer": "github:html-next/svg-icon-optimizer#7a8901075c39d800879ccef80392842455f716e9",
+    "broccoli-asset-rev": "^3.0.0",
+    "ember-auto-import": "^2.4.0",
+    "ember-cli": "~4.2.0",
+    "ember-cli-app-version": "^5.0.0",
+    "ember-cli-babel": "^7.26.11",
+    "ember-cli-dependency-checker": "^3.2.0",
+    "ember-cli-htmlbars": "^6.0.1",
+    "ember-cli-inject-live-reload": "^2.1.0",
+    "ember-cli-sri": "^2.1.1",
+    "ember-cli-terser": "^4.0.2",
+    "ember-cli-sass": "^10.0.1",
+    "ember-cli-typescript": "^5.0.0",
+    "ember-inflector": "^4.0.2",
+    "ember-modifier": "^3.2.5",
+    "ember-export-application-global": "^2.0.1",
+    "ember-exam": "^8.0.0",
+    "ember-engines": "^0.8.20",
+    "ember-fetch": "^8.1.1",
+    "ember-intl": "github:ember-intl/ember-intl#1f6c801994f7",
+    "ember-cached-decorator-polyfill": "^0.1.4",
+    "ember-named-blocks-polyfill": "^0.2.5",
+    "ember-unique-id-helper-polyfill": "^1.1.0",
+    "ember-load-initializers": "^2.1.2",
+    "ember-page-title": "^7.0.0",
+    "ember-qunit": "^5.1.5",
+    "ember-resolver": "^8.0.3",
+    "ember-source": "~4.2.0",
+    "ember-service-worker": "^9.0.1",
+    "ember-service-worker-index": "^0.7.2",
+    "ember-service-worker-asset-cache": "^0.6.4",
+    "ember-service-worker-cache-fallback": "^0.6.2",
+    "loader.js": "^4.7.0",
+    "qunit": "^2.18.0",
+    "qunit-dom": "^2.0.0",
+    "sass": "^1.50.0",
+    "webpack": "^5.72.0"
+  },
+  "scripts": {
+    "build": "EMBER_ENGINES_ADDON_DEDUPE=true && ember build --environment=production",
+    "start:local": "EMBER_ENGINES_ADDON_DEDUPE=true && ember serve --port=0",
+    "test:development": "ember exam --parallel=16 --load-balance --test-port=0",
+    "test:production": "ember exam --parallel=16 --load-balance -e production --test-port=0"
+  },
+  "ember": {
+    "edition": "octane"
+  }
 }

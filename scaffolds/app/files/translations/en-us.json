@@ -1,0 +1,17 @@
+{
+  "page_title": {
+    "login": "Login"
+  },
+  "login": {
+    "title": "Login",
+    "submit": "Login",
+    "reset_password": "Forgot Password?"
+  },
+  "misc": {
+    "email": "Email",
+    "email_placeholder": "me@example.com",
+    "password": "Password",
+    "password_placeholder": "At least 15 characters",
+    "toggle_input_visibility": "toggle input visibility"
+  }
+}

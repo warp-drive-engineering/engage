@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    <<<<appName>>>>
+  </title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  {{content-for "head"}}
+
+  <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon" />
+  <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+  <link integrity="" rel="stylesheet" href="{{rootURL}}assets/<<<<appName>>>>.css">
+
+  {{content-for "head-footer"}}
+</head>
+<body>
+  {{content-for "body"}}
+
+  <script type="text/javascript">
+    (function () {
+      // begin load of en-us translations immediately
+      const translations = fetch(`/translations/en-us.json`);
+      window.enUSTranslationsPromise = translations.then(result => result.json());
+    })();
+  </script>
+  <script src="{{rootURL}}assets/vendor.js"></script>
+  <script src="{{rootURL}}assets/<<<<appName>>>>.js"></script>
+
+  {{content-for "body-footer"}}
+</body>
+</html>

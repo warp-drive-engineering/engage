@@ -1,23 +1,23 @@
 <p align="center">
   <picture>
   <source
-    srcset="./NCC-1701-a-blue.svg"
+    srcset="./NCC-1701-a.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./NCC-1701-a.svg"
+    srcset="./NCC-1701-a-blue.svg"
     media="(prefers-color-scheme: light)"
   />
   <img
     class="project-logo"
-    src="./NCC-1701-a.svg#gh-light-mode-only"
+    src="./NCC-1701-a-blue.svg#gh-light-mode-only"
     alt="Built with WarpDrive"
     width="120px"
     title="Built with WarpDrive"
     />
   <img
     class="project-logo"
-    src="./NCC-1701-a-blue.svg#gh-dark-mode-only"
+    src="./NCC-1701-a.svg#gh-dark-mode-only"
     alt="Built with WarpDrive"
     width="120px"
     title="Built with WarpDrive" />

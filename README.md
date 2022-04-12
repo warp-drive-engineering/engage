@@ -1,23 +1,23 @@
 <p align="center">
   <picture>
   <source
-    srcset="./NCC-1701-a-blue.svg"
+    srcset="./NCC-1701-a.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./NCC-1701-a.svg"
+    srcset="./NCC-1701-a-blue.svg"
     media="(prefers-color-scheme: light)"
   />
   <img
     class="project-logo"
-    src="./NCC-1701-a.svg#gh-light-mode-only"
+    src="./NCC-1701-a-blue.svg#gh-light-mode-only"
     alt="WarpDrive Engineering"
     width="120px"
     title="WarpDrive Engineering"
     />
   <img
     class="project-logo"
-    src="./NCC-1701-a-blue.svg#gh-dark-mode-only"
+    src="./NCC-1701-a.svg#gh-dark-mode-only"
     alt="WarpDrive Engineering"
     width="120px"
     title="WarpDrive Engineering" />
@@ -117,7 +117,7 @@ volta install ember-cli
 
 ### ♥️ Credits
 
-Brought to you with ♥️ love by [WarpDrive Engineering](https://github.com/warp-drive)
+Brought to you with ♥️ love by [WarpDrive Engineering](https://github.com/warp-drive-engineering)
 
 
 <br><br><br><br>

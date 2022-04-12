@@ -74,7 +74,7 @@
   },
   "scripts": {
     "build": "EMBER_ENGINES_ADDON_DEDUPE=true && ember build --environment=production",
-    "start:local": "EMBER_ENGINES_ADDON_DEDUPE=true && ember serve --port=0",
+    "start": "EMBER_ENGINES_ADDON_DEDUPE=true && ember serve --port=0",
     "test:development": "ember exam --parallel=16 --load-balance --test-port=0",
     "test:production": "ember exam --parallel=16 --load-balance -e production --test-port=0"
   },

@@ -1,5 +1,5 @@
 {
-    "name": "blueprints-root",
+    "name": "@warp-drive/blueprints",
     "version": "0.0.0",
     "private": true,
     "workspaces": {
@@ -18,10 +18,20 @@
         "node": "17.9.0",
         "yarn": "1.22.18"
     },
+    "dependencies": {
+        "execa": "^6.1.0",
+        "chalk": "^5.0.1",
+        "command-line-usage": "^6.1.2",
+        "command-line-args": "^5.2.1",
+        "github-label-sync": "^2.2.0"
+    },
     "devDependencies": {
         "release-it": "^14.14.1",
         "release-it-yarn-workspaces": "^2.0.1",
         "release-it-lerna-changelog": "^4.0.1"
+    },
+    "bin": {
+        "engage": "./bin/engage.mjs"
     },
     "release-it": {
         "plugins": {
@@ -55,5 +65,9 @@
           ":memo: test": ":goal_net: Test",
           ":memo: chore": ":house: Internal"
         }
-      }
+    },
+    "keywords": [
+        "ember-addon",
+        "ember-blueprint"
+    ]
 }

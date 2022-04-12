@@ -3,6 +3,8 @@
   "description": "Add your description here",
   "version": "0.0.0",
   "private": true,
+  "license": "All Rights Reserved",
+  "author": "<<<<githubUser>>>> <<<<<githubEmail>>>>>",
   "workspaces": {
       "packages": [
           "addons/*",
@@ -10,6 +12,15 @@
           "engines/*",
           "tools/*"
       ]
+  },
+  "scripts": {
+    "test:development": "",
+    "test:production": "",
+    "test:fastboot": "",
+    "test:embroider": "",
+    "lint:hbs": "",
+    "lint:ts": "",
+    "check:types": ""
   },
   "repository": {
       "type": "git",

@@ -4,7 +4,7 @@
     "version": "0.0.0",
     "private": true,
     "license": "ALL RIGHTS RESERVED",
-    "author": "<<<<githubUser>>>>",
+    "author": "<<<<githubUser>>>> <<<<<githubEmail>>>>>",
     "repository": {
         "type": "git",
         "url": "git+ssh://<<<<githubUrl>>>>",

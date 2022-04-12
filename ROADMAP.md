@@ -9,11 +9,7 @@
 - Optimized EmberData w/ ??
 - SVG Icons with [@html-next/svg-icon-optimizer](https://github.com/html-next/svg-icon-optimizer)
 - Layouts with [@html-next/flexi](https://github.com/html-next/flexi)
-- Useful Polyfills
-  - named blocks
-  - cached decorator
-  - ember-modifiers
-  - unique id
+
 - images
   - lazy loading and webp optimization
   - cdn optimizations?
@@ -22,9 +18,6 @@
   - critical-css
 - compression
   - brotli
-- minification
-  - advanced terser settings
-  - json-minifier
 - web-workers
 - service-workers
 - Animations

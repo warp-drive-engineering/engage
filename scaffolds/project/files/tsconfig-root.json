@@ -33,8 +33,8 @@
                 "node_modules/ember-fetch"
             ],
             "*": [
-                "types/*",
-            ],
+                "types/*"
+              ]
         }
     },
     "include": [
@@ -43,7 +43,7 @@
         "engines/*/addon/**/*",
         "apps/*/tests/**/*",
         "addons/*/tests/**/*",
-        "engines/*/tests/**/*",
+        "engines/*/tests/**/*"
     ],
     "exclude": [
         "node_modules",
@@ -70,6 +70,6 @@
         "engines/*/vendor",
         "engines/*/public",
         ".github",
-        ".git",
+        ".git"
     ]
 }

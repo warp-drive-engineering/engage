@@ -16,9 +16,9 @@ async function guardImports() {
       const chalk = await import("chalk");
       const cliusage = await import("command-line-usage");
       const cliargs = await import("command-line-args");
-  
+
       const imports = { chalk, cliargs, cliusage };
-  
+
       // some modules may not be esm yet so when importing dynamically we have to normalize
       // even though importing statically we would not have to.
       Object.keys(imports).forEach((key) => {
@@ -26,7 +26,7 @@ async function guardImports() {
           imports[key] = imports[key].default;
         }
       });
-  
+
       modules = imports;
       return imports;
     } catch {
@@ -94,7 +94,7 @@ async function main() {
     const mainOptions = cliargs(mainDefinitions, { stopAtFirstUnknown: true, argv: process.argv });
     const argv = mainOptions._unknown || [];
     write(`\n\t${chalk.yellow("@warp-drive/engage")}\n\n\t##########################\n`);
-    
+
     if (mainOptions.command) {
         const command = COMMANDS[mainOptions.command];
         const isProject = mainOptions.command === "project";
@@ -117,7 +117,7 @@ async function main() {
         const cmd = await import(command.src);
         await cmd.default(argv);
 
-        if (argv.indexOf("---help") === -1 && argv.indexOf("-h") === -1) {
+        if (argv.indexOf("--help") === -1 && argv.indexOf("-h") === -1) {
             write(chalk.cyan(`\n\t🎉 ${command.kind} Scaffolding Complete${isProject ? "" : ` in ${pkg.name}`}. Warp Drive Engaged.`));
         }
     } else {

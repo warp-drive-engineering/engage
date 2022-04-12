@@ -1,10 +1,10 @@
 {
-    "name": "@warp-drive/blueprints",
+    "name": "@warp-drive/engage",
     "version": "0.0.0",
     "private": true,
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com/warp-drive-engineering/blueprints.git"
+        "url": "git+ssh://git@github.com/warp-drive-engineering/engage.git"
     },
     "engines": {
         "node": "14.* || >= 16"

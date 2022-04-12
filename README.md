@@ -28,6 +28,8 @@
 
 Scaffolding for highly optimized applications built with [Ember.js](https://emberjs.com/)
 
+![example cli usage](./demos/app-demo.svg)
+
 ## About
 
 `engage` is a tool for scaffolding [Monorepo]() projects using [Yarn Workspaces](), [Lerna](), [Release It](), and [Typescript]().
@@ -69,6 +71,8 @@ yarn global add @warp-drive/engage
 
 Once installed, run `engage --help` to see detailed usage information.
 
+![example help usage](./demos/help-demo.svg)
+
 ### 🚀 Usage
 
 **1. Create a new Project**
@@ -81,6 +85,8 @@ _Why `--githubUrl`?_
 > This allows `engage` to configure
 >  the project labels, packages, and various scripts correctly. In the future, we'll add a way
 >  to skip this for folks not using github or who are scaffolding while offline.
+
+![example project usage](./demos/project-demo.svg)
 
 Then switch into the new directory and start working!
 

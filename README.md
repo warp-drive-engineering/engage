@@ -1,3 +1,29 @@
+<p align="center">
+  <picture>
+  <source
+    srcset="./NCC-1701-a-blue.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./NCC-1701-a.svg"
+    media="(prefers-color-scheme: light)"
+  />
+  <img
+    class="project-logo"
+    src="./NCC-1701-a.svg#gh-light-mode-only"
+    alt="WarpDrive Engineering"
+    width="120px"
+    title="WarpDrive Engineering"
+    />
+  <img
+    class="project-logo"
+    src="./NCC-1701-a-blue.svg#gh-dark-mode-only"
+    alt="WarpDrive Engineering"
+    width="120px"
+    title="WarpDrive Engineering" />
+  </picture>
+</p>
+
 # @warp-drive/engage
 
 Scaffolding for highly optimized applications built with [Ember.js](https://emberjs.com/)
@@ -29,9 +55,9 @@ Some of the defaults it provides:
 - Optimizations for SVGs, Templates, Translations
 - Automated Releases for both Public and Private Packages
 
-> For the full feature list see [Features](./FEATURES.md)
-> For planned but not yet released features see the [Roadmap](./ROADMAP.md)
-> For Release Notes see [Releases](https://github.com/warp-drive-engineering/engage/releases) or the [Changelog](./CHANGELOG.md)
+> - For the full feature list see [Features](./FEATURES.md)
+> - For planned but not yet released features see the [Roadmap](./ROADMAP.md)
+> - For Release Notes see [Releases](https://github.com/warp-drive-engineering/engage/releases) or the [Changelog](./CHANGELOG.md)
 
 ### 👷🏽‍♀️ Installation
 
@@ -92,3 +118,63 @@ volta install ember-cli
 ### ♥️ Credits
 
 Brought to you with ♥️ love by [WarpDrive Engineering](https://github.com/warp-drive)
+
+
+<br><br><br><br>
+ <details>
+   <summary>.</summary>
+
+  <style type="text/css">
+    img.logo {
+       padding: 0 5em 1em 5em;
+       width: 100px;
+       border-bottom: 2px solid #fcb045;
+       margin: 0 auto;
+       display: block;
+     }
+    details > summary {
+      font-size: 1.1rem;
+      line-height: 1rem;
+      margin-bottom: 1rem;
+    }
+    details {
+      font-size: 1rem;
+    }
+    details > summary strong {
+      display: inline-block;
+      padding: .2rem 0;
+      color: #000;
+      border-bottom: 3px solid #fcb045;
+    }
+
+    details > details {
+      margin-left: 2rem;
+    }
+    details > details > summary {
+      font-size: 1rem;
+      line-height: 1rem;
+      margin-bottom: 1rem;
+    }
+    details > details > summary strong {
+      display: inline-block;
+      padding: .2rem 0;
+      color: #555;
+      border-bottom: 2px solid #555;
+    }
+    details > details {
+      font-size: .85rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      details > summary strong {
+        color: #fff;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      details > details > summary strong {
+        color: #afaba0;
+      border-bottom: 2px solid #afaba0;
+      }
+    }
+  </style>
+</details>

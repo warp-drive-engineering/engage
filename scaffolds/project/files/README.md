@@ -1,26 +1,26 @@
 <p align="center">
   <picture>
   <source
-    srcset="./logo-dark-mode.svg"
+    srcset="./NCC-1701-a-blue.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./logo-light-mode.svg"
+    srcset="./NCC-1701-a.svg"
     media="(prefers-color-scheme: light)"
   />
   <img
     class="project-logo"
-    src="./logo-light-mode.svg#gh-light-mode-only"
-    alt="<<<<githubOrg>>>>"
+    src="./NCC-1701-a.svg#gh-light-mode-only"
+    alt="Built with WarpDrive"
     width="120px"
-    title="<<<<projectName>>>>"
+    title="Built with WarpDrive"
     />
   <img
     class="project-logo"
-    src="./logo-dark-mode.svg#gh-dark-mode-only"
-    alt="<<<<githubOrg>>>>"
+    src="./NCC-1701-a-blue.svg#gh-dark-mode-only"
+    alt="Built with WarpDrive"
     width="120px"
-    title="<<<<projectName>>>>" />
+    title="Built with WarpDrive" />
   </picture>
 </p>
 

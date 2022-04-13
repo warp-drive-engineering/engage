@@ -1,0 +1,72 @@
+[
+    {
+        "name": ":memo: cleanup",
+        "description": "Changelog | This PR primarily removes deprecated functionality",
+        "color": "#eefeee"
+    },
+    {
+        "name": ":memo: deprecation",
+        "description": "Changelog | This PR introduces a new deprecation",
+        "color": "#eefeee"
+    },
+    {
+        "name": ":memo: security",
+        "description": "Changelog | This PR addresses a security vulnerability",
+        "color": "#eefeee"
+    },
+    {
+        "name": ":memo: feat",
+        "description": "Changelog | This PR introduces a new feature",
+        "color": "#eefeee"
+    },
+    {
+        "name": ":memo: chore",
+        "description": "Changelog | This PR primarily refactors code or updates dependencies",
+        "color": "#eefeee"
+    },
+    {
+        "name": ":memo: perf",
+        "description": "Changelog | This PR improves performance in a notable way",
+        "color": "#eefeee"
+    },
+    {
+        "name": ":memo: test",
+        "description": "Changelog | This PR primarily adds tests for a feature",
+        "color": "#eefeee"
+    },
+    {
+        "name": ":memo: bugfix",
+        "description": "Changelog | This PR primarily fixes a reported issue",
+        "color": "#eefeee"
+    },
+    {
+        "name": ":memo: doc",
+        "description": "Changelog | This PR adds/improves/or fixes documentation",
+        "color": "#eefeee"
+    },
+    {
+        "name": ":memo: infra",
+        "description": "Add Infra changelog entry | PRs related to build/release/ci infra",
+        "color": "#eefeee"
+    },
+    {
+        "name": ":memo: skip",
+        "description": "Changelog | This PR SHOULD NOT be included in the changelog",
+        "color": "#fefeee"
+    },
+    {
+        "name": ":dart: main",
+        "description": "PR Targets the Main Branch (default)",
+        "color": "fdfdfd"
+    },
+    {
+        "name": ":dart: release",
+        "description": "PR Should be Backported to the Release Branch Once Accepted",
+        "color": "fdfdfd"
+    },
+    {
+        "name": "dependencies",
+        "description": "PR Updates a Dependency",
+        "color": "c5e5e5"
+    }
+]

@@ -23,11 +23,11 @@ jobs:
       - name: Install Root Dependencies
         run: yarn install
       - name: Check Types
-        run: yarn lint:types
+        run: yarn check:types
       - name: Lint HBS
         run: yarn lint:hbs
-      - name: Lint JS
-        run: yarn lint:js
+      - name: Lint JS/TS
+        run: yarn lint:jsts
   basic-tests:
     name: Basic Tests
     needs: changes

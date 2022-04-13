@@ -20,7 +20,7 @@
     "test:fastboot": "lerna run --stream --parallel --no-bail test:fastboot",
     "test:embroider": "lerna run --stream --parallel --no-bail test:embroider",
     "lint:hbs": "ember-template-lint .",
-    "lint:ts": "eslint . --cache",
+    "lint:jsts": "eslint . --cache",
     "check:types": "tsc -p ./tsconfig.json --noEmit --pretty false"
   },
   "repository": {

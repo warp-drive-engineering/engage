@@ -1,0 +1,33 @@
+name: Enforce Release PR labeling
+
+on:
+  pull_request:
+    types: [labeled, unlabeled, opened, reopened, edited, synchronize]
+    branches:
+      - release
+
+concurrency:
+  group: pr-labels-release-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  enforce-changelog-label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: yogevbd/enforce-label-action@2.1.0
+        with:
+          REQUIRED_LABELS_ANY: ':memo: breaking,:memo: feat,:memo: bugfix,:memo: perf,:memo: cleanup,:memo: deprecation,:memo: doc,:memo: test,:memo: chore,:memo: skip'
+          REQUIRED_LABELS_ANY_DESCRIPTION: "Select at least one label for changelog generation. Use the label `:memo: skip` and none of the others in the list to avoid this being included. [':memo: breaking', ':memo: feat', ':memo: bugfix', ':memo: perf', ':memo: cleanup', ':memo: deprecation', ':memo: doc', ':memo: test', ':memo: chore', ':memo: skip']"
+  ban-target-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: yogevbd/enforce-label-action@2.1.0
+        with:
+          BANNED_LABELS: 'target:canary,target:release'
+          BANNED_LABELS_DESCRIPTION: "These labels should only be used for PRs targeting the master branch, remove them. ['target:canary', 'target:release']"
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-ecosystem/action-add-labels@v1.1.2
+        with:
+          labels: backport-release

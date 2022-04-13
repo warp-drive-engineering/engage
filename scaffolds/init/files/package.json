@@ -1,0 +1,60 @@
+{
+  "name": "<<<<projectName>>>>-root",
+  "workspaces": {
+      "nohoist": ["**/ember-source", "**/ember-intl", "**/ember-cli-version-checker", "**/@html-next/vertical-collection"]
+  },
+  "repository": {
+      "type": "git",
+      "url": "git+ssh://<<<<githubUrl>>>>"
+  },
+  "homepage": "https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>",
+  "bugs": "https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>/issues",
+  "engines": {
+      "node": "14.* || >= 16"
+  },
+  "volta": {
+      "node": "17.9.0",
+      "yarn": "1.22.18"
+  },
+  "devDependencies": {
+      "release-it": "^14.14.1",
+      "release-it-yarn-workspaces": "^2.0.1",
+      "release-it-lerna-changelog": "^4.0.1",
+      "lerna": "^4.0.0",
+      "lerna-changelog": "^2.2.0",
+      "mdast-util-from-markdown": "^1.2.0"
+  },
+  "release-it": {
+      "plugins": {
+          "release-it-lerna-changelog": {
+              "infile": "CHANGELOG.md",
+              "launchEditor": false
+          },
+          "release-it-yarn-workspaces": {
+              "skipChecks": true,
+              "publish": false
+          }
+      },
+      "git": {
+          "tagName": "v${version}"
+      },
+      "github": {
+          "release": true,
+          "tokenRef": "GITHUB_AUTH"
+      },
+      "npm": false
+  },
+  "changelog": {
+      "labels": {
+        ":memo: security": ":lock: Security Improvement",
+        ":memo: feat": ":rocket: Enhancement",
+        ":memo: bugfix": ":bug: Bug Fix",
+        ":memo: perf:": ":zap: Performance",
+        ":memo: cleanup": ":shower: Deprecation Removal",
+        ":memo: deprecation": ":evergreen_tree: New Deprecation",
+        ":memo: doc": ":memo: Documentation",
+        ":memo: test": ":goal_net: Test",
+        ":memo: chore": ":house: Internal"
+      }
+    }
+}

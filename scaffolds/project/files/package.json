@@ -12,7 +12,7 @@
           "engines/*",
           "tools/*"
       ],
-      "nohoist": ["**/ember-source", "**/ember-cli-version-checker", "**/@html-next/vertical-collection"]
+      "nohoist": ["**/ember-source", "**/ember-intl", "**/ember-cli-version-checker", "**/@html-next/vertical-collection"]
   },
   "scripts": {
     "test:development": "",

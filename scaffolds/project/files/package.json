@@ -15,10 +15,10 @@
       "nohoist": ["**/ember-source", "**/ember-intl", "**/ember-cli-version-checker", "**/@html-next/vertical-collection"]
   },
   "scripts": {
-    "test:development": "",
-    "test:production": "",
-    "test:fastboot": "",
-    "test:embroider": "",
+    "test:development": "lerna run --stream --parallel --no-bail test:development",
+    "test:production": "lerna run --stream --parallel --no-bail test:production",
+    "test:fastboot": "lerna run --stream --parallel --no-bail test:fastboot",
+    "test:embroider": "lerna run --stream --parallel --no-bail test:embroider",
     "lint:hbs": "ember-template-lint .",
     "lint:ts": "eslint . --cache",
     "check:types": "tsc -p ./tsconfig.json --noEmit --pretty false"

@@ -20,6 +20,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "intl-messageformat-parser": "^6.4.4",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.6.0",
     "@embroider/compat": "^1.2.0",
@@ -34,7 +35,7 @@
     "@html-next/flexi-layouts": "^3.0.0-alpha.0",
     "@html-next/flexi-default-styles": "^3.0.0-alpha.0",
     "@html-next/flexi-config": "^3.0.0-alpha.0",
-    "@html-next/svg-icon-optimizer": "github:html-next/svg-icon-optimizer#7a8901075c39d800879ccef80392842455f716e9",
+    "@html-next/svg-icon-optimizer": "github:html-next/svg-icon-optimizer#ccd4c8b5c3a54f9edc46dc23ce7c3d05a66eedc7",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^2.4.0",
     "ember-cli": "~4.2.0",

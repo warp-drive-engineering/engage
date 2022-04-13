@@ -1,8 +1,10 @@
-import Application from 'testy/app';
+import Application from '<<<<appName>>>>/app';
 import config from '<<<<appName>>>>/config/environment';
 import * as QUnit from 'qunit';
-import { setApplication } from '@ember/test-helpers';
 import { setup } from 'qunit-dom';
+
+import { setApplication } from '@ember/test-helpers';
+
 import start from 'ember-exam/test-support/start';
 
 setApplication(Application.create(config.APP));

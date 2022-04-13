@@ -1,14 +1,15 @@
+/* eslint-env node */
 'use strict';
 
 module.exports = function (environment) {
-  let ENV = {
+  const ENV = {
     modulePrefix: '<<<<appName>>>>',
     podModulePrefix: '<<<<appName>>>>/routes',
     environment,
     rootURL: '/',
     locationType: 'history',
-    apiNamespace: "api/v1/",
-    apiHost: "http://localhost:4200",
+    apiNamespace: 'api/v1/',
+    apiHost: 'http://localhost:4200',
     apiCacheHardExpires: 900_000, // 15 min
     apiCacheSoftExpires: 60_000, // 1 min
     EmberENV: {

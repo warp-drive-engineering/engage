@@ -30,6 +30,18 @@
 
 This project is the [monorepo](https://en.wikipedia.org/wiki/Monorepo) for frontend and webview based applications.
 
+## Architecture
+
+Our applications are built with [Ember.js](https://emberjs.com/) and managed as a series of [yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) with [lerna workspace tools](https://github.com/lerna/lerna).
+The project directory contains several subdirectories that organize our various workspaces by type.
+
+ - [Engines](https://github.com/ember-engines/ember-engines) are contained in the directory `engines/`
+ - [Applications](https://guides.emberjs.com/release/getting-started/anatomy-of-an-ember-app/) are contained in the directory `apps/`
+ - [Addons](https://cli.emberjs.com/release/writing-addons/) are contained in the directory `addons/`
+ - **Tools** (custom tooling packages) are contained in the directory `tools/`
+
+ Using Yarn and Lerna in this way allows us to author multiple applications, libraries and tools that are utilized by each other and maintained together.
+
 ## Basic Setup
 
 <details open>
@@ -106,7 +118,7 @@ yarn start:<appName>:local
 
 This will start the development server and launch a browser with the specified app.
 
-If you would like more control over the build, test, and serve commands navigate to the respective frontend
+If you would like more control over the build, test, and serve commands navigate to the respective
 application and utilize the respective commands from within the given repository. This can be especially useful
 when debugging or when trying to examine the difference between two versions/commits.
   <br><br><br>
@@ -120,7 +132,7 @@ when debugging or when trying to examine the difference between two versions/com
   We run three separate forms of lint checks on our codebase. These checks run in CI on Pull Requests but you can also run them individually via the command line.
   
   These checks are configured in a way
-    that they run lint on all of the projects within the frontend directory, but you can choose to switch into an individual project and run the same lint command within it as well. All root commands are in the `scripts` hash within [./package.json](./package.json) while individual project commands are in their respective `package.json` files.
+    that they run lint on all of the projects within workspaces, but you can choose to switch into an individual project and run the same lint command within it as well. All root commands are in the `scripts` hash within [./package.json](./package.json) while individual project commands are in their respective `package.json` files.
 
   - Typescript Compiler Check: `yarn lint:types` configured by [./.tsconfig.json](./.tsconfig.json)
   - Javascript & Typescript Lint: `yarn lint:js` configured by [./.eslintrc.js](./.eslintrc.js)
@@ -205,24 +217,6 @@ when debugging or when trying to examine the difference between two versions/com
 
 <br><br>
 </details>
-
-## Architecture
-
-<details>
-  <summary><strong>Frontend</strong></summary>
-
-Our frontend applications are built with [Ember.js](https://emberjs.com/) and managed as a series of [yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) with [lerna workspace tools](https://github.com/lerna/lerna).
-The project directory contains several subdirectories that organize our various workspaces by type.
-
- - [Engines](https://github.com/ember-engines/ember-engines) are contained in the directory `engines/`
- - [Applications](https://guides.emberjs.com/release/getting-started/anatomy-of-an-ember-app/) are contained in the directory `apps/`
- - [Addons](https://cli.emberjs.com/release/writing-addons/) are contained in the directory `addons/`
- - **Tools** (custom tooling packages) are contained in the directory `tools/`
-
- Using Yarn and Lerna in this way allows us to author multiple applications, libraries and tools that are utilized by each other and maintained together.
- 
- <br><br><br>
- </details>
 
 <br><br><br><br>
  <details>

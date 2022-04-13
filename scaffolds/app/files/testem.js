@@ -1,1 +1,2 @@
-module.exports = require("../../lib/testem");
+/* eslint-env node */
+module.exports = require('../../lib/testem');

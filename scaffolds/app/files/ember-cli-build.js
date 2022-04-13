@@ -1,12 +1,19 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+
 const isTest = process.env.EMBER_CLI_TEST_COMMAND;
 const isProd = process.env.EMBER_ENV === 'production';
 
 module.exports = function (defaults) {
   const terserSettings = {
-    exclude: ['assets/dummy.js', 'assets/tests.js', 'assets/test-support.js', 'dist/docs/*', 'docs/*'],
+    exclude: [
+      'assets/dummy.js',
+      'assets/tests.js',
+      'assets/test-support.js',
+      'dist/docs/*',
+      'docs/*',
+    ],
     terser: {
       compress: {
         ecma: 2016, // probably can be higher
@@ -34,26 +41,25 @@ module.exports = function (defaults) {
     terserSettings.enabled = false;
   }
 
-  let app = new EmberApp(defaults, {
+  const app = new EmberApp(defaults, {
     emberData: {
-      compatWith: "4.3",
+      compatWith: '4.3',
     },
-    "esw-cache-fallback": {
+    'esw-cache-fallback': {
       // RegExp patterns specifying which URLs to cache.
       // e.g "http://localhost:4200/api/v1/(.+)"
       patterns: [],
 
       // changing this version number will bust the cache
-      version: "1",
+      version: '1',
     },
     'ember-cli-babel': {
-      throwUnlessParallelizable: true,
+      // TODO get this activated for the default template
+      // throwUnlessParallelizable: true,
       includeExternalHelpers: true,
     },
     'ember-cli-terser': terserSettings,
   });
-
-
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
@@ -77,7 +83,7 @@ module.exports = function (defaults) {
     ],
   });
   */
- // we can replace with the embroider compat above once
- // ember-service-worker/skyrocket/flexi etc. are embroider compat safe
- return app.toTree();
+  // we can replace with the embroider compat above once
+  // ember-service-worker/skyrocket/flexi etc. are embroider compat safe
+  return app.toTree();
 };

@@ -50,8 +50,7 @@
             "release": true,
             "releaseName": "Release v${version}",
             "tokenRef": "GITHUB_AUTH"
-        },
-        "npm": false
+        }
     },
     "changelog": {
         "labels": {

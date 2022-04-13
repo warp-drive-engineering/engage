@@ -27,6 +27,11 @@
         "lerna-changelog": "^2.2.0",
         "release-it-lerna-changelog": "^4.0.1"
     },
+    "files": [
+       "./lib/**",
+       "./bin/**",
+       "./scaffolds/**"
+    ],
     "bin": {
         "engage": "./bin/engage.mjs"
     },

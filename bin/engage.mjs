@@ -43,6 +43,11 @@ const COMMANDS = {
       kind: "Project",
       src: '../lib/create-project.mjs'
   },
+  init: {
+    name: "init",
+    kind: "Project",
+    src: "../lib/init-project.mjs"
+  },
   app: {
       name: "app",
       kind: "Application",

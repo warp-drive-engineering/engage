@@ -52,7 +52,6 @@
     "ember-modifier": "^3.2.5",
     "ember-export-application-global": "^2.0.1",
     "ember-exam": "^8.0.0",
-    "ember-engines": "^0.8.20",
     "ember-fetch": "^8.1.1",
     "ember-intl": "github:ember-intl/ember-intl#1f6c801994f7",
     "ember-cached-decorator-polyfill": "^0.1.4",

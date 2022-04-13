@@ -2,6 +2,8 @@
     "name": "@warp-drive/engage",
     "version": "0.0.0",
     "private": false,
+    "license": "ALL RIGHTS RESERVED",
+    "author": "Warp Drive Engineering <warp.drive.engineering@gmail.com>",
     "repository": {
         "type": "git",
         "url": "git+ssh://git@github.com/warp-drive-engineering/engage.git"
@@ -22,7 +24,7 @@
     },
     "devDependencies": {
         "release-it": "^14.14.1",
-        "release-it-yarn-workspaces": "^2.0.1",
+        "lerna-changelog": "^2.2.0",
         "release-it-lerna-changelog": "^4.0.1"
     },
     "bin": {
@@ -33,10 +35,6 @@
             "release-it-lerna-changelog": {
                 "infile": "CHANGELOG.md",
                 "launchEditor": false
-            },
-            "release-it-yarn-workspaces": {
-                "skipChecks": true,
-                "publish": false
             }
         },
         "git": {

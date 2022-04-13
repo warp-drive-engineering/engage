@@ -38,10 +38,12 @@
             }
         },
         "git": {
-            "tagName": "v${version}"
+            "tagName": "v${version}",
+            "requireCleanWorkingDir": true
         },
         "github": {
             "release": true,
+            "releaseName": "Release v${version}",
             "tokenRef": "GITHUB_AUTH"
         },
         "npm": false

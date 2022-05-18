@@ -1,11 +1,11 @@
 <p align="center">
   <picture>
   <source
-    srcset="./NCC-1701-a.svg"
+    srcset="./NCC-1701-a.svg#gh-dark-mode-only"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./NCC-1701-a-blue.svg"
+    srcset="./NCC-1701-a-blue.svg#gh-light-mode-only"
     media="(prefers-color-scheme: light)"
   />
   <img

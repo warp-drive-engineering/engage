@@ -4,8 +4,7 @@
     src="./NCC-1701-a-blue.svg#gh-light-mode-only"
     alt="WarpDrive Engineering"
     width="120px"
-    title="WarpDrive Engineering"
-    />
+    title="WarpDrive Engineering" />
   <img
     class="project-logo"
     src="./NCC-1701-a.svg#gh-dark-mode-only"
@@ -121,10 +120,10 @@ Brought to you with ♥️ love by [WarpDrive Engineering](https://github.com/wa
    <summary>.</summary>
 
   <style type="text/css">
-    img.logo {
+    img.project-logo {
        padding: 0 5em 1em 5em;
        width: 100px;
-       border-bottom: 2px solid #fcb045;
+       border-bottom: 2px solid #0969da;
        margin: 0 auto;
        display: block;
      }
@@ -140,7 +139,7 @@ Brought to you with ♥️ love by [WarpDrive Engineering](https://github.com/wa
       display: inline-block;
       padding: .2rem 0;
       color: #000;
-      border-bottom: 3px solid #fcb045;
+      border-bottom: 3px solid #0969da;
     }
 
     details > details {

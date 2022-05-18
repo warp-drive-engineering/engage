@@ -1,13 +1,4 @@
 <p align="center">
-  <picture>
-  <source
-    srcset="./NCC-1701-a.svg"
-    media="(prefers-color-scheme: dark)"
-  />
-  <source
-    srcset="./NCC-1701-a-blue.svg"
-    media="(prefers-color-scheme: light)"
-  />
   <img
     class="project-logo"
     src="./NCC-1701-a-blue.svg#gh-light-mode-only"
@@ -21,7 +12,6 @@
     alt="Built with WarpDrive"
     width="120px"
     title="Built with WarpDrive" />
-  </picture>
 </p>
 
 # <<<<projectName>>>>
@@ -231,7 +221,7 @@ when debugging or when trying to examine the difference between two versions/com
    <summary>.</summary>
 
   <style type="text/css">
-    img.logo {
+    img.project-logo {
        padding: 0 5em 1em 5em;
        width: 100px;
        border-bottom: 2px solid #0969da;

@@ -18,16 +18,16 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
-          cache: "yarn"
+          node-version: "16"
+          cache: "pnpm"
       - name: Install Root Dependencies
-        run: yarn install
+        run: pnpm install
       - name: Check Types
-        run: yarn check:types
+        run: npx check:types
       - name: Lint HBS
-        run: yarn lint:hbs
+        run: npx lint:hbs
       - name: Lint JS/TS
-        run: yarn lint:jsts
+        run: npx lint:jsts
   basic-tests:
     name: Basic Tests
     needs: changes
@@ -36,11 +36,13 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
-          cache: "yarn"
+          node-version: "16"
+          cache: "pnpm"
       - name: Install Dependencies
-        run: yarn install
+        run: pnpm install
+      - name: Build Libraries
+        run: npx build:libraries
       - name: Basic Development Tests
-        run: yarn test:development
+        run: npx test:development
       - name: Basic Production Tests
-        run: yarn test:production
+        run: npx test:production

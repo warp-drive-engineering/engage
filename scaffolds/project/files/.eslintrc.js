@@ -9,7 +9,7 @@ const ImportSortGroups = [
   // But not our packages, ember/glimmer/ember-data packages, or potential addons (things starting with ember- or @ember-)
   [
     // eslint-disable-next-line no-useless-escape
-    `^(?!@ember\-data)(?!ember)(?!@ember\-)(?!@glimmer)(?!@warp\-drive/)(?!warp\-drive\-)(@?\\w)`,
+    `^(?!@ember\-data)(?!ember)(?!@ember\-)(?!@glimmer)(?!@<<<<escapedOrgName>>>>/)(?!<<<<escapedOrgName>>>>\-)(@?\\w)`,
   ],
   // Glimmer & Ember & EmberData Dependencies
   // eslint-disable-next-line no-useless-escape
@@ -18,10 +18,10 @@ const ImportSortGroups = [
   // eslint-disable-next-line no-useless-escape
   [`^(ember\-|@ember\-)`],
   // Our sub packages (engines / addons)
-  [`^@warp\-drive/`],
+  [`^@<<<<escapedOrgName>>>>/`],
   // Our Main Package.
   // eslint-disable-next-line no-useless-escape
-  [`^warp\-drive\-`],
+  [`^<<<<escapedOrgName>>>>\-`],
   // Absolute imports and other imports such as Vue-style `@/foo`.
   // Anything that does not start with a dot.
   ['^[^.]'],
@@ -63,10 +63,7 @@ module.exports = {
     'plugin:qunit/recommended',
     'plugin:unicorn/recommended',
   ],
-  globals: {
-    Chart: 'readonly',
-    flatpickr: 'readonly',
-  },
+  globals: {},
   env: {
     browser: true,
   },

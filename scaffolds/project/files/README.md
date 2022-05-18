@@ -26,13 +26,15 @@
 
 # <<<<projectName>>>>
 
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/<<<<githubUser>>>>)](https://github.com/sponsors/<<<<githubUser>>>>)
+[![lerna version](https://img.shields.io/github/lerna-json/v/<<<<githubOrg>>>>/<<<<githubName>>>>)](https://lerna.js.org/)
 [![Generate Release Candidate](https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>/actions/workflows/release.yml/badge.svg?event=workflow_dispatch)](https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>/actions/workflows/release.yml)
 
 This project is the [monorepo](https://en.wikipedia.org/wiki/Monorepo) for frontend and webview based applications.
 
 ## Architecture
 
-Our applications are built with [Ember.js](https://emberjs.com/) and managed as a series of [yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) with [lerna workspace tools](https://github.com/lerna/lerna).
+Applications are built with [Ember.js](https://emberjs.com/) and managed as a series of [pnpm workspaces](https://pnpm.io/workspaces) with [lerna workspace tools](https://github.com/lerna/lerna).
 The project directory contains several subdirectories that organize our various workspaces by type.
 
  - [Engines](https://github.com/ember-engines/ember-engines) are contained in the directory `engines/`
@@ -40,7 +42,7 @@ The project directory contains several subdirectories that organize our various 
  - [Addons](https://cli.emberjs.com/release/writing-addons/) are contained in the directory `addons/`
  - **Tools** (custom tooling packages) are contained in the directory `tools/`
 
- Using Yarn and Lerna in this way allows us to author multiple applications, libraries and tools that are utilized by each other and maintained together.
+ > Using pnpm and Lerna in this way allows us to author multiple applications, libraries and tools that are utilized by each other and maintained together.
 
 ## Basic Setup
 
@@ -67,16 +69,22 @@ git clone git@github.com:<<<<githubOrg>>>>/<<<<githubName>>>>.git
 
 This will create a new folder `fnb` within the current directory containing the project files.
 
-3. If your machine does not already have [volta](https://volta.sh/), make sure you have it installed. This will ensure that the correct [node](https://nodejs.org/en/about/releases/) and [yarn](https://yarnpkg.com/) versions are available when within the project.
+3. If your machine does not already have [volta](https://volta.sh/), make sure you have it installed. This will ensure that the correct [node](https://nodejs.org/en/about/releases/) version is available when within the project.
 
 ```sh
 curl https://get.volta.sh | bash
 ```
 
-4. Install dependencies.
+4. Install `pnpm`
 
 ```sh
-yarn install
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
+
+5. Install dependencies.
+
+```sh
+pnpm install
 ```
 
   <br><br><br>
@@ -113,7 +121,7 @@ brew install watchman
     <summary><strong>Starting an App</strong></summary>
 
 ```sh
-yarn start:<appName>:local
+npx start:<appName>:local
 ```
 
 This will start the development server and launch a browser with the specified app.
@@ -134,16 +142,16 @@ when debugging or when trying to examine the difference between two versions/com
   These checks are configured in a way
     that they run lint on all of the projects within workspaces, but you can choose to switch into an individual project and run the same lint command within it as well. All root commands are in the `scripts` hash within [./package.json](./package.json) while individual project commands are in their respective `package.json` files.
 
-  - Typescript Compiler Check: `yarn lint:types` configured by [./.tsconfig.json](./.tsconfig.json)
-  - Javascript & Typescript Lint: `yarn lint:js` configured by [./.eslintrc.js](./.eslintrc.js)
-  - Handlebars Linting: `yarn lint:hbs` configured by [./.template-lintrc.js](./.template-lintrc.js)
+  - Typescript Compiler Check: `npx lint:types` configured by [./.tsconfig.json](./.tsconfig.json)
+  - Javascript & Typescript Lint: `npx lint:jsts` configured by [./.eslintrc.js](./.eslintrc.js)
+  - Handlebars Linting: `npx lint:hbs` configured by [./.template-lintrc.js](./.template-lintrc.js)
 
   ### Test Commands
 
   In addition to various browser compatibility and scenario tests, we run two key sets of tests in CI. These commands are similarly found in the `scripts` hash within [./package.json](./package.json) with corresponding project commands located in respective respective `package.json` files.
 
-  - Production Tests: `yarn test:production`
-  - Development Tests: `yarn test:development`
+  - Production Tests: `npx test:production`
+  - Development Tests: `npx test:development`
 
   Production and development test scenarios run the same tests; however, production tests exclude tests that check for deprecations, asserts, and dev time checks to ensure our code still functions correctly with these things removed.
 
@@ -153,7 +161,7 @@ when debugging or when trying to examine the difference between two versions/com
 
   1. Accessing tests for any locally served development build.
 
-  If you have an application running either via `yarn start:<app-name>:local` or `ember serve`, then navigating to the `/tests` url will pull up and run the tests in the browser, allowing you to monitor and debug failures. If the application is serving at `localhost:4200`, then `localhost:4200/tests` will give access to the test.
+  If you have an application running either via `npx start:<app-name>:local` or `ember serve`, then navigating to the `/tests` url will pull up and run the tests in the browser, allowing you to monitor and debug failures. If the application is serving at `localhost:4200`, then `localhost:4200/tests` will give access to the test.
 
   2. Launching the tests in their own browser context
 
@@ -226,7 +234,7 @@ when debugging or when trying to examine the difference between two versions/com
     img.logo {
        padding: 0 5em 1em 5em;
        width: 100px;
-       border-bottom: 2px solid #fcb045;
+       border-bottom: 2px solid #0969da;
        margin: 0 auto;
        display: block;
      }
@@ -242,7 +250,7 @@ when debugging or when trying to examine the difference between two versions/com
       display: inline-block;
       padding: .2rem 0;
       color: #000;
-      border-bottom: 3px solid #fcb045;
+      border-bottom: 3px solid #0969da;
     }
 
     details > details {

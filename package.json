@@ -9,12 +9,15 @@
         "url": "git+ssh://git@github.com/warp-drive-engineering/engage.git"
     },
     "engines": {
-        "node": "14.* || >= 16"
+        "node": "16.* || >= 18",
+        "npm": "Use pnpm",
+        "yarn": "Use pnpm"
     },
     "volta": {
-        "node": "17.9.0",
-        "yarn": "1.22.18"
+        "node": "18.2.0"
     },
+    "packageManager": "pnpm@7.1.1",
+    "pnpm": {},
     "dependencies": {
         "execa": "^6.1.0",
         "chalk": "^5.0.1",
@@ -28,9 +31,9 @@
         "release-it-lerna-changelog": "^4.0.1"
     },
     "files": [
-       "./lib/**",
-       "./bin/**",
-       "./scaffolds/**"
+        "./lib/**",
+        "./bin/**",
+        "./scaffolds/**"
     ],
     "bin": {
         "engage": "./bin/engage.mjs"
@@ -54,15 +57,15 @@
     },
     "changelog": {
         "labels": {
-          ":memo: security": ":lock: Security Improvement",
-          ":memo: feat": ":rocket: Enhancement",
-          ":memo: bugfix": ":bug: Bug Fix",
-          ":memo: perf:": ":zap: Performance",
-          ":memo: cleanup": ":shower: Deprecation Removal",
-          ":memo: deprecation": ":evergreen_tree: New Deprecation",
-          ":memo: doc": ":memo: Documentation",
-          ":memo: test": ":goal_net: Test",
-          ":memo: chore": ":house: Internal"
+            ":memo: security": ":lock: Security Improvement",
+            ":memo: feat": ":rocket: Enhancement",
+            ":memo: bugfix": ":bug: Bug Fix",
+            ":memo: perf:": ":zap: Performance",
+            ":memo: cleanup": ":shower: Deprecation Removal",
+            ":memo: deprecation": ":evergreen_tree: New Deprecation",
+            ":memo: doc": ":memo: Documentation",
+            ":memo: test": ":goal_net: Test",
+            ":memo: chore": ":house: Internal"
         }
     },
     "keywords": [

@@ -14,6 +14,8 @@ module.exports = function (defaults) {
       'dist/docs/*',
       'docs/*',
     ],
+    /*
+    // TODO activate once we've adjusted the asset size tooling to find the new module defs
     terser: {
       compress: {
         ecma: 2016, // probably can be higher
@@ -35,6 +37,7 @@ module.exports = function (defaults) {
       sourceMap: false,
       ecma: 2016,
     },
+    */
   };
 
   if (isTest && isProd) {

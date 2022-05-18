@@ -20,6 +20,8 @@ engines/*/blueprints/route/
 engines/*/blueprints/route-test/
 engines/*/blueprints/edition-detector.js
 engines/*/blueprints/test-framework-detector.js
+apps/*/ios/
+apps/*/android/
 
 # dependencies
 /node_modules/
@@ -50,6 +52,7 @@ yarn-error.log
 /addons/*/node_modules/
 /addons/*/vendor/
 /addons/*/public/
+.lint-todo
 
 # ember-try
 /.node_modules.ember-try/

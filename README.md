@@ -17,11 +17,9 @@
 
 Scaffolding for highly optimized applications built with [Ember.js](https://emberjs.com/)
 
-![example cli usage](./demos/app-demo.svg)
-
 ## About
 
-`engage` is a tool for scaffolding [Monorepo]() projects using [Yarn Workspaces](), [Lerna](), [Release It](), and [Typescript]().
+`engage` is a tool for scaffolding [Monorepo]() projects using [pnpm Workspaces](), [Lerna](), [Release It](), and [Typescript]().
 
 It's built for the future of Ember, focusing on configuring your project to maximize your success.
 
@@ -31,6 +29,8 @@ You don't need to put all of your code into one mono-repo, but often you'll find
 
 Even projects with just one app or addon will find value
 in this structure as they scale.
+
+<kbd>![example cli usage](./demos/app-demo.svg)</kbd>
 
 ### ⛰ Features
 
@@ -60,7 +60,7 @@ yarn global add @warp-drive/engage
 
 Once installed, run `engage --help` to see detailed usage information.
 
-![example help usage](./demos/help-demo.svg)
+<kbd>![example help usage](./demos/help-demo.svg)</kbd>
 
 ### 🚀 Usage
 
@@ -75,7 +75,7 @@ _Why `--githubUrl`?_
 >  the project labels, packages, and various scripts correctly. In the future, we'll add a way
 >  to skip this for folks not using github or who are scaffolding while offline.
 
-![example project usage](./demos/project-demo.svg)
+<kbd>![example project usage](./demos/project-demo.svg)</kbd>
 
 Then switch into the new directory and start working!
 

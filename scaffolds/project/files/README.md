@@ -16,8 +16,9 @@
 
 # <<<<projectName>>>>
 
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/<<<<githubUser>>>>)](https://github.com/sponsors/<<<<githubUser>>>>)
-[![lerna version](https://img.shields.io/github/lerna-json/v/<<<<githubOrg>>>>/<<<<githubName>>>>)](https://lerna.js.org/)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/<<<<githubUsername>>>>)](https://github.com/sponsors/<<<<githubUsername>>>>)
+[![lerna version](https://img.shields.io/github/package-json/dependency-version/<<<<githubOrg>>>>/<<<<githubName>>>>/dev/lerna)](https://lerna.js.org/)
+[![pnpm version](https://img.shields.io/github/package-json/packageManager/<<<<githubOrg>>>>/<<<<githubName>>>>)](https://pnpm.io/)
 [![Generate Release Candidate](https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>/actions/workflows/release.yml/badge.svg?event=workflow_dispatch)](https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>/actions/workflows/release.yml)
 
 This project is the [monorepo](https://en.wikipedia.org/wiki/Monorepo) for frontend and webview based applications.

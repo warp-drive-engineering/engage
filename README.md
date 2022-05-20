@@ -41,7 +41,7 @@ Some of the defaults it provides:
 - Typescript
 - Optimized builds with embroider
 - SSR via fastboot
-- ServiceWorker by default
+- ~ServiceWorker by default~ *ember-service-worker* is not compatible with embroider, we are working on a new service-worker solution for ember apps.
 - Advanced terser configuration
 - Optimizations for SVGs, Templates, Translations
 - Automated Releases for both Public and Private Packages
@@ -55,7 +55,7 @@ Some of the defaults it provides:
 Installing the package globally will add the command `engage` to your terminal.
 
 ```
-yarn global add @warp-drive/engage
+pnpm add -g @warp-drive/engage
 ```
 
 Once installed, run `engage --help` to see detailed usage information.

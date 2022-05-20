@@ -10,7 +10,8 @@
           "addons/*",
           "apps/*",
           "engines/*",
-          "tools/*"
+          "tools/*",
+          "tests/*"
       ]
   },
   "scripts": {

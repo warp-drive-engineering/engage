@@ -48,7 +48,8 @@
         "engines/*/addon/**/*",
         "apps/*/tests/**/*",
         "addons/*/tests/**/*",
-        "engines/*/tests/**/*"
+        "engines/*/tests/**/*",
+        "tests/*/tests/**/*"
     ],
     "exclude": [
         "node_modules",

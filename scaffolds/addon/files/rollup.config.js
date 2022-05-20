@@ -2,16 +2,23 @@ import { Addon } from "@embroider/addon-dev/rollup";
 import babel from "@rollup/plugin-babel";
 import fs from "node:fs";
 import path from "node:path";
+import * as url from "node:url";
 import walkSync from "walk-sync";
+
+const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 const addon = new Addon({
   srcDir: "src",
   destDir: "dist",
 });
 
+const importAvailable = ["services/**/*.{js,ts}", "modifiers/**/*.{js,ts}", ];
+const globallyAvailable = ["components/**/*.{js,ts}", "helpers/**/*.{js,ts}"];
+
 function pathExists(filePath) {
   try {
-    fs.statSync(filePath);
+    const fullPath = path.resolve(path.join(__dirname, "src", filePath));
+    fs.statSync(fullPath);
     return true;
   } catch {
     return false;
@@ -25,30 +32,39 @@ function isTemplateOnly(hbsPath) {
   return !(pathExists(jsPath) || pathExists(tsPath));
 }
 
-function getTemplateOnly(hbsPath) {
-  const input = fs.readFileSync(hbsPath, "utf8");
-  return (
-    `import { hbs } from 'ember-cli-htmlbars';\n` +
-    `import templateOnly from '@ember/component/template-only';\n` +
-    `import { setComponentTemplate } from '@ember/component';\n` +
-    `export default setComponentTemplate(\n` +
-    `hbs\`${input}\`, templateOnly());`
-  );
-}
 function normalizeFileExt(fileName) {
   return fileName.replace(/\.hbs$/, ".js");
 }
 
+const templateOnlyComponent =
+  `import templateOnly from '@ember/component/template-only';\n` +
+  `export default templateOnly();\n`;
+
 function templateOnlyPlugin(args) {
+  const generated = new Set();
+
   return {
     name: "template-only-component-plugin",
+
+    resolveId(source) {
+      const niceId = source.replace(__dirname, "");
+      if (generated.has(niceId)) {
+        return {
+          id: source,
+        };
+      }
+      return null;
+    },
+
     load(id) {
-      if (!id.endsWith(".hbs")) {
-        return;
+      const niceId = id.replace(__dirname, "");
+      if (generated.has(niceId)) {
+        return {
+          id,
+          code: templateOnlyComponent,
+        };
       }
-      if (isTemplateOnly(id)) {
-        return { code: getTemplateOnly(id), id: normalizeFileExt(id) };
-      }
+      return null;
     },
     buildStart() {
       const matches = walkSync(args.srcDir, {
@@ -57,18 +73,19 @@ function templateOnlyPlugin(args) {
 
       for (const name of matches) {
         if (name.endsWith(".hbs") && isTemplateOnly(name)) {
+          const fileName = normalizeFileExt(name);
+          const id = path.join(args.srcDir, fileName);
+          generated.add(id);
           this.emitFile({
             type: "chunk",
-            id: path.join(args.srcDir, name),
-            fileName: normalizeFileExt(name),
+            id,
+            fileName,
           });
         }
       }
     },
   };
 }
-
-const globallyAvailable = ["components/**/*.{js,ts}", "helpers/**/*.{js,ts}"];
 
 export default {
   // This provides defaults that work well alongside `publicEntrypoints` below.
@@ -80,7 +97,7 @@ export default {
   plugins: [
     // These are the modules that users should be able to import from your
     // addon. Anything not listed here may get optimized away.
-    addon.publicEntrypoints([...globallyAvailable, "services/**/*.{js,ts}"]),
+    addon.publicEntrypoints([...globallyAvailable, ...importAvailable]),
 
     // These are the modules that should get reexported into the traditional
     // "app" tree. Things in here should also be in publicEntrypoints above, but
@@ -88,7 +105,7 @@ export default {
     addon.appReexports(globallyAvailable),
 
     babel({
-      extensions: [".js", ".ts", ".hbs"],
+      extensions: [".js", ".ts"],
       babelHelpers: "runtime", // we should consider "external",
     }),
 
@@ -97,12 +114,12 @@ export default {
     // package names.
     addon.dependencies(),
 
-    // Ensure that standalone .hbs files are properly integrated as Javascript.
-    // addon.hbs(),
-
     // ensure that template-only components are properly integrated
     // this exists because of https://github.com/embroider-build/embroider/issues/1121
     templateOnlyPlugin({ include: ["components/**/*.hbs"], srcDir: "src" }),
+
+    // Ensure that standalone .hbs files are properly integrated as Javascript.
+    addon.hbs(),
 
     // addons are allowed to contain imports of .css files, which we want rollup
     // to leave alone and keep in the published output.

@@ -32,6 +32,7 @@ yarn-error.log
 /apps/*/dist-*
 /apps/*/tmp/
 /apps/*/node_modules/
+/apps/*/asset-stats.json
 /engines/*/DEBUG
 /engines/*/dist/
 /engines/*/dist-*

@@ -22,8 +22,8 @@
     "@embroider/addon-shim": "^1.5.0"
   },
   "exports": {
-    ".": "./dist/index.js",
-    "./*": "./dist/*",
+    ".": "./dist/src/index.js",
+    "./*": "./dist/src/*",
     "./addon-main.js": "./addon-main.js"
   },
   "files": [
@@ -39,7 +39,8 @@
     "main": "addon-main.js",
     "type": "addon",
     "version": 2,
-    "app-js": {}
+    "app-js": {},
+    "public-assets": {}
   },
   "peerDependencies": {},
   "devDependencies": {

@@ -23,11 +23,11 @@ jobs:
       - name: Install Root Dependencies
         run: pnpm install
       - name: Check Types
-        run: npx check:types
+        run: pnpm run check:types
       - name: Lint HBS
-        run: npx lint:hbs
+        run: pnpm run lint:hbs
       - name: Lint JS/TS
-        run: npx lint:jsts
+        run: pnpm run lint:jsts
   basic-tests:
     name: Basic Tests
     needs: changes
@@ -41,8 +41,8 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
       - name: Build Libraries
-        run: npx build:libraries
+        run: pnpm run build:libraries
       - name: Basic Development Tests
-        run: npx test:development
+        run: pnpm run test:development
       - name: Basic Production Tests
-        run: npx test:production
+        run: pnpm run test:production

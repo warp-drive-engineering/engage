@@ -1,23 +1,23 @@
-import { Addon } from "@embroider/addon-dev/rollup";
-import babel from "@rollup/plugin-babel";
-import fs from "node:fs";
-import path from "node:path";
-import * as url from "node:url";
-import walkSync from "walk-sync";
+import { Addon } from '@embroider/addon-dev/rollup';
+import babel from '@rollup/plugin-babel';
+import fs from 'node:fs';
+import path from 'node:path';
+import * as url from 'node:url';
+import walkSync from 'walk-sync';
 
-const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const addon = new Addon({
-  srcDir: "src",
-  destDir: "dist",
+  srcDir: 'src',
+  destDir: 'dist/src',
 });
 
-const importAvailable = ["services/**/*.{js,ts}", "modifiers/**/*.{js,ts}", ];
-const globallyAvailable = ["components/**/*.{js,ts}", "helpers/**/*.{js,ts}"];
+const importAvailable = ['services/**/*.{js,ts}', 'modifiers/**/*.{js,ts}'];
+const globallyAvailable = ['components/**/*.{js,ts}', 'helpers/**/*.{js,ts}'];
 
 function pathExists(filePath) {
   try {
-    const fullPath = path.resolve(path.join(__dirname, "src", filePath));
+    const fullPath = path.resolve(path.join(__dirname, 'src', filePath));
     fs.statSync(fullPath);
     return true;
   } catch {
@@ -26,14 +26,14 @@ function pathExists(filePath) {
 }
 
 function isTemplateOnly(hbsPath) {
-  const jsPath = hbsPath.replace(/\.hbs$/, ".js");
-  const tsPath = hbsPath.replace(/\.hbs$/, ".ts");
+  const jsPath = hbsPath.replace(/\.hbs$/, '.js');
+  const tsPath = hbsPath.replace(/\.hbs$/, '.ts');
 
   return !(pathExists(jsPath) || pathExists(tsPath));
 }
 
 function normalizeFileExt(fileName) {
-  return fileName.replace(/\.hbs$/, ".js");
+  return fileName.replace(/\.hbs$/, '.js');
 }
 
 const templateOnlyComponent =
@@ -44,10 +44,10 @@ function templateOnlyPlugin(args) {
   const generated = new Set();
 
   return {
-    name: "template-only-component-plugin",
+    name: 'template-only-component-plugin',
 
     resolveId(source) {
-      const niceId = source.replace(__dirname, "");
+      const niceId = source.replace(__dirname, '');
       if (generated.has(niceId)) {
         return {
           id: source,
@@ -57,7 +57,7 @@ function templateOnlyPlugin(args) {
     },
 
     load(id) {
-      const niceId = id.replace(__dirname, "");
+      const niceId = id.replace(__dirname, '');
       if (generated.has(niceId)) {
         return {
           id,
@@ -72,12 +72,12 @@ function templateOnlyPlugin(args) {
       });
 
       for (const name of matches) {
-        if (name.endsWith(".hbs") && isTemplateOnly(name)) {
+        if (name.endsWith('.hbs') && isTemplateOnly(name)) {
           const fileName = normalizeFileExt(name);
           const id = path.join(args.srcDir, fileName);
           generated.add(id);
           this.emitFile({
-            type: "chunk",
+            type: 'chunk',
             id,
             fileName,
           });
@@ -105,8 +105,8 @@ export default {
     addon.appReexports(globallyAvailable),
 
     babel({
-      extensions: [".js", ".ts"],
-      babelHelpers: "runtime", // we should consider "external",
+      extensions: ['.js', '.ts'],
+      babelHelpers: 'runtime', // we should consider "external",
     }),
 
     // Follow the V2 Addon rules about dependencies. Your code can import from
@@ -116,14 +116,14 @@ export default {
 
     // ensure that template-only components are properly integrated
     // this exists because of https://github.com/embroider-build/embroider/issues/1121
-    templateOnlyPlugin({ include: ["components/**/*.hbs"], srcDir: "src" }),
+    templateOnlyPlugin({ include: ['components/**/*.hbs'], srcDir: 'src' }),
 
     // Ensure that standalone .hbs files are properly integrated as Javascript.
     addon.hbs(),
 
     // addons are allowed to contain imports of .css files, which we want rollup
     // to leave alone and keep in the published output.
-    addon.keepAssets(["**/*.css"]),
+    addon.keepAssets(['**/*.css']),
 
     // Remove leftover build artifacts when starting a new build.
     addon.clean(),

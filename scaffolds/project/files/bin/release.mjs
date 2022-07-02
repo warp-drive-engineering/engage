@@ -285,7 +285,7 @@ function writeChangelog(options) {
 
     if (firstCommit) {
       changelog = execWithLog(
-        `npx lerna-changelog --next-version=${UNRELEASED} --from=${firstCommit}`
+        `pnpm run lerna-changelog --next-version=${UNRELEASED} --from=${firstCommit}`
       );
       changelog = changelog.replace(UNRELEASED, options.nextVersion);
     } else {
@@ -296,7 +296,7 @@ function writeChangelog(options) {
 
     try {
       changelog = execWithLog(
-        `npx lerna-changelog --next-version=${UNRELEASED} --from=${fromCommit}`
+        `pnpm run lerna-changelog --next-version=${UNRELEASED} --from=${fromCommit}`
       );
       changelog = changelog
         ? changelog.replace(UNRELEASED, options.nextVersion)

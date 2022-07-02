@@ -2,7 +2,7 @@
     "name": "@warp-drive/engage",
     "version": "0.0.4",
     "private": false,
-    "license": "ALL RIGHTS RESERVED",
+    "license": "MIT",
     "author": "Warp Drive Engineering <warp.drive.engineering@gmail.com>",
     "repository": {
         "type": "git",
@@ -31,9 +31,14 @@
         "release-it-lerna-changelog": "^4.0.1"
     },
     "files": [
-        "./lib/**",
-        "./bin/**",
-        "./scaffolds/**"
+        "lib/**/*",
+        "bin/**/*",
+        "scaffolds/**/*",
+        "FEATURES.md",
+        "ROADMAP.md",
+        "demos/*",
+        "NCC-1701-a-blue.svg",
+        "NCC-1701-a.svg"
     ],
     "bin": {
         "engage": "./bin/engage.mjs"

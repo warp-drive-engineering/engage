@@ -15,11 +15,16 @@
 
 # @warp-drive/engage
 
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/runspired)](https://github.com/sponsors/runspired)
+[![lerna version](https://img.shields.io/github/package-json/dependency-version/warp-drive-engineering/engage/dev/lerna)](https://lerna.js.org/)
+[![pnpm version](https://img.shields.io/github/package-json/packageManager/warp-drive-engineering/engage)](https://pnpm.io/)
+[![Generate Release Candidate](https://github.com/warp-drive-engineering/engage/actions/workflows/release.yml/badge.svg?event=workflow_dispatch)](https://github.com/warp-drive-engineering/engage/actions/workflows/release.yml)
+
 Scaffolding for highly optimized applications built with [Ember.js](https://emberjs.com/)
 
 ## About
 
-`engage` is a tool for scaffolding [Monorepo]() projects using [pnpm Workspaces](), [Lerna](), [Release It](), and [Typescript]().
+`engage` is a tool for scaffolding [Monorepo](https://en.wikipedia.org/wiki/Monorepo) projects using [pnpm Workspaces](), [Lerna](https://github.com/lerna/lerna), [Release It](), and [Typescript]().
 
 It's built for the future of Ember, focusing on configuring your project to maximize your success.
 

@@ -9,7 +9,7 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const addon = new Addon({
   srcDir: 'src',
-  destDir: 'dist/src',
+  destDir: 'dist',
 });
 
 const importAvailable = ['services/**/*.{js,ts}', 'modifiers/**/*.{js,ts}'];

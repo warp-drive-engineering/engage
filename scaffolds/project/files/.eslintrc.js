@@ -18,6 +18,7 @@ const ImportSortGroups = [
   // eslint-disable-next-line no-useless-escape
   [`^(ember\-|@ember\-)`],
   // Our sub packages (engines / addons)
+  // eslint-disable-next-line no-useless-escape
   [`^@<<<<escapedGithubOrg>>>>/`],
   // Our Main Package.
   // eslint-disable-next-line no-useless-escape

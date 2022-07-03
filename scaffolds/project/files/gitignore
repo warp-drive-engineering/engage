@@ -43,6 +43,9 @@ yarn-error.log
 /addons/*/dist-*
 /addons/*/tmp/
 /addons/*/node_modules/
+/apps/*/concat-stats-for/
+/engines/*/concat-stats-for/
+/addons/*/concat-stats-for/
 
 # ember-try
 /.node_modules.ember-try/

@@ -15,6 +15,7 @@
   "engines": {
     "node": "14.* || >= 16"
   },
+  "keywords": ["ember-addon"],
   "volta": {
     "extends": "../../package.json"
   },
@@ -44,21 +45,21 @@
   },
   "peerDependencies": {},
   "devDependencies": {
-    "@embroider/addon-dev": "^1.6.0",
-    "rollup": "^2.74.1",
-    "@babel/core": "^7.18.0",
-    "@babel/plugin-proposal-class-properties": "^7.17.12",
-    "@babel/plugin-proposal-decorators": "^7.17.12",
-    "@babel/plugin-transform-typescript": "^7.18.1",
-    "@babel/plugin-transform-runtime": "^7.18.0",
-    "@babel/preset-typescript": "^7.17.12",
-    "@babel/preset-env": "^7.18.0",
-    "@babel/runtime": "^7.18.0",
+    "@embroider/addon-dev": "^1.8.1",
+    "rollup": "^2.75.7",
+    "@babel/core": "^7.18.6",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.16.6",
+    "@babel/plugin-transform-typescript": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/runtime": "^7.18.6",
     "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-typescript": "^8.3.2",
+    "@rollup/plugin-typescript": "^8.3.3",
     "tslib": "^2.4.0",
     "walk-sync": "^3.0.0",
-    "typescript": "^4.6.4"
+    "typescript": "^4.7.5"
   },
   "ember": {
     "edition": "octane"

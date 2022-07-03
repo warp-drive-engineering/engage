@@ -10,11 +10,12 @@
   "homepage": "https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>",
   "bugs": "https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>/issues",
   "engines": {
-      "node": "14.* || >= 16"
+    "node": "16.* || >= 18",
+    "npm": "Use pnpm",
+    "yarn": "Use pnpm"
   },
   "volta": {
-      "node": "17.9.0",
-      "yarn": "1.22.18"
+      "node": "17.9.0"
   },
   "devDependencies": {
       "release-it": "^14.14.1",

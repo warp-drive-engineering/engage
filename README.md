@@ -24,7 +24,7 @@ Scaffolding for highly optimized applications built with [Ember.js](https://embe
 
 ## About
 
-`engage` is a tool for scaffolding [Monorepo](https://en.wikipedia.org/wiki/Monorepo) projects using [pnpm Workspaces](), [Lerna](https://github.com/lerna/lerna), [Release It](), and [Typescript]().
+`engage` is a tool for scaffolding [Monorepo](https://en.wikipedia.org/wiki/Monorepo) projects using [pnpm Workspaces](https://pnpm.io/workspaces), [Lerna](https://github.com/lerna/lerna), [Release It](https://github.com/release-it/release-it), and [Typescript](https://www.typescriptlang.org/).
 
 It's built for the future of Ember, focusing on configuring your project to maximize your success.
 
@@ -39,7 +39,7 @@ in this structure as they scale.
 
 ### ⛰ Features
 
-In addition to a new project structure, `engage` provides an enhanced "out-of-the-box" experience for app developement, helping to ensure you ship the most powerful but lightweight and performant application possible, to whatever platforms you target.
+In addition to a new project structure, `engage` provides an enhanced "out-of-the-box" experience for app development, helping to ensure you ship the most powerful but lightweight and performant application possible, to whatever platforms you target.
 
 Some of the defaults it provides:
 
@@ -105,9 +105,9 @@ For the full list of things that can be scaffolded, run `engage --help`.
 
 Using these scaffolds requires a global ember-cli install.
 
-We recommend installing and managing yarn, node and ember-cli via [volta](https://volta.sh/).
+We recommend installing and managing node and ember-cli via [volta](https://volta.sh/).
 
-These scaffolds configure node and yarn usage in each package via volta.
+These scaffolds configure node usage in each package via volta.
 
 Install volta if required, then use volta to install ember-cli.
 

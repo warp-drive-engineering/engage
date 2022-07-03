@@ -13,7 +13,9 @@
   "homepage": "https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>",
   "bugs": "https://github.com/<<<<githubOrg>>>>/<<<<githubName>>>>/issues",
   "engines": {
-    "node": "14.* || >= 16"
+    "node": "16.* || >= 18",
+    "npm": "Use pnpm",
+    "yarn": "Use pnpm"
   },
   "keywords": ["ember-addon"],
   "volta": {

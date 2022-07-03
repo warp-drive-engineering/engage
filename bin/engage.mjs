@@ -31,7 +31,7 @@ async function guardImports() {
       return imports;
     } catch {
       write(
-        `\r\n\r\n\t!!! This script requires the dependencies specified in this project's root package.json file to be installed. !!!\r\n\r\n\tRun \`yarn install\` then attempt this script again.`
+        `\r\n\r\n\t!!! This script requires the dependencies specified in this project's root package.json file to be installed. !!!\r\n\r\n\tRun \`pnpm install\` then attempt this script again.`
       );
       process.exit(1);
     }
@@ -92,6 +92,8 @@ const COMMANDS = {
 
 async function main() {
     const { chalk, cliargs, cliusage } = await guardImports();
+    const { default: autoUpdate } = await import('../lib/utils/auto-update.mjs');
+    await autoUpdate();
 
     const mainDefinitions = [
         { name: "command", description: `command to run, must be one of [${Object.keys(COMMANDS).join("|")}]`, type: String, defaultOption: true }

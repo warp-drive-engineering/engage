@@ -5,7 +5,7 @@
 - SSR with Fastboot
 - Embroider
 - Typescript
-- Monorepo with yarn workspaces and lerna tooling
+- Monorepo with pnpm workspaces and lerna tooling
 - Optimized EmberData w/ ??
 - SVG Icons with [@html-next/svg-icon-optimizer](https://github.com/html-next/svg-icon-optimizer)
 - Layouts with [@html-next/flexi](https://github.com/html-next/flexi)

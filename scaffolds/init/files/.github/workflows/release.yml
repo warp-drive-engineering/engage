@@ -41,7 +41,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-          cache: "yarn"
+          cache: "pnpm"
       - uses: crazy-max/ghaction-import-gpg@v4
         with:
           gpg_private_key: ${{ secrets.ENGINEERING_SIGNATURE }}
@@ -51,7 +51,7 @@ jobs:
           git_tag_gpgsign: true
           git_push_gpgsign: false
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile --non-interactive
+        run: pnpm install
       - name: Run Release Script
         id: run_release
         # after we run the release we force the release branch to be whatever we just released

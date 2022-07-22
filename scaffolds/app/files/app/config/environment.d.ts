@@ -2,7 +2,7 @@
  * Type declarations for
  *    import config from 'my-app/config/environment'
  */
- declare const config: {
+declare const config: {
   apiNamespace: string;
   apiHost: string;
   apiCacheHardExpires: number;
@@ -10,7 +10,7 @@
   environment: string;
   modulePrefix: string;
   podModulePrefix: string;
-  locationType: "history" | "hash" | "none" | "auto";
+  locationType: 'history' | 'hash' | 'none' | 'auto';
   rootURL: string;
   APP: Record<string, unknown>;
 };

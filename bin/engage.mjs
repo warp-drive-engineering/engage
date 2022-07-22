@@ -217,7 +217,7 @@ async function main() {
 
     }
 
-    write(`\n\n\t♥️  Made With Love by WarpDrive Engineering\n\n`);
+    write(`\n\n\t💓  Made With Love by WarpDrive Engineering\n\n`);
 }
 
 main();

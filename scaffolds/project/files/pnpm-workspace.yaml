@@ -1,0 +1,6 @@
+packages:
+  - 'addons/*'
+  - 'apps/*'
+  - 'engines/*'
+  - 'tools/*'
+  - 'tests/*'

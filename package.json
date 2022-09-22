@@ -9,14 +9,13 @@
         "url": "git+ssh://git@github.com/warp-drive-engineering/engage.git"
     },
     "engines": {
-        "node": "16.* || >= 18",
-        "npm": "Use pnpm",
-        "yarn": "Use pnpm"
+        "node": "14.* || 16.* || >= 18"
     },
     "volta": {
-        "node": "18.2.0"
+        "node": "18.2.0",
+        "pnpm": "7.12.1"
     },
-    "packageManager": "pnpm@7.5.0",
+    "packageManager": "pnpm@7.12.1",
     "pnpm": {},
     "dependencies": {
         "execa": "^6.1.0",

@@ -16,30 +16,27 @@ module.exports = function (defaults) {
       'dist/docs/*',
       'docs/*',
     ],
-    /*
-    // TODO activate once we've adjusted the asset size tooling to find the new module defs
     terser: {
       compress: {
-        ecma: 2016, // probably can be higher
-        passes: 6, // slow, but worth it
-        negate_iife: false,
-        sequences: 30,
-        defaults: true,
-        arguments: true,
-        keep_fargs: false,
-        toplevel: true,
-        unsafe: true,
-        unsafe_comps: true,
-        unsafe_math: true,
-        unsafe_symbols: true,
-        unsafe_proto: true,
-        unsafe_undefined: true,
-      },
-      toplevel: true,
-      sourceMap: false,
-      ecma: 2016,
+					ecma: 2021,
+					passes: 6, // slow, but worth it
+					negate_iife: false,
+					sequences: 30,
+					defaults: true,
+					arguments: false,
+					keep_fargs: false,
+					toplevel: false,
+					unsafe: true,
+					unsafe_comps: true,
+					unsafe_math: true,
+					unsafe_symbols: true,
+					unsafe_proto: true,
+					unsafe_undefined: true,
+				},
+				toplevel: false,
+				sourceMap: false,
+				ecma: 2021,
     },
-    */
   };
 
   if (isTest && isProd) {
@@ -50,16 +47,29 @@ module.exports = function (defaults) {
     emberData: {
       compatWith: '4.3',
     },
-    /*
-    'esw-cache-fallback': {
-      // RegExp patterns specifying which URLs to cache.
-      // e.g "http://localhost:4200/api/v1/(.+)"
-      patterns: [],
-
-      // changing this version number will bust the cache
-      version: '1',
+    autoImport: {
+      exclude: [],
+      skipBabel: [],
+      webpack: {
+        plugins: [
+          new BundleAnalyzerPlugin({
+						analyzerMode: 'static',
+						openAnalyzer: false,
+						reportFilename: 'auto-import-bundles.html',
+					}),
+        ]
+      },
+      externals: {}
     },
-    */
+    'fingerprint': {
+			exclude: [],
+			extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'json'],
+			generateAssetMap: true,
+			fingerprintAssetMap: true,
+		},
+    'ember-cli-deprecation-workflow': {
+			enabled: true,
+		},
     'ember-cli-babel': {
       throwUnlessParallelizable: true,
       includeExternalHelpers: true,

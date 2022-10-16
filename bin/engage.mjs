@@ -122,7 +122,7 @@ async function main() {
         write(chalk.grey(`\t🚀  engaging ${command.kind}${isProject ? "" : ` in ${pkg.name}`}...\n\n`));
 
         const cmd = await import(command.src);
-        await cmd.default(argv);
+        await cmd.default(argv, { command });
 
         if (argv.indexOf("--help") === -1 && argv.indexOf("-h") === -1) {
             write(chalk.cyan(`\n\t🎉 ${command.kind} Scaffolding Complete${isProject ? "" : ` in ${pkg.name}`}. Warp Drive Engaged.`));
